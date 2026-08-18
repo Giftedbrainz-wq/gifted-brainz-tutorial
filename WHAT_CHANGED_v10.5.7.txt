@@ -1,0 +1,11 @@
+Gifted Brainz v10.5.7 — update-session/storage repair
+
+Key changes:
+- Canonical Netlify Function remains netlify/functions/api.mjs.
+- Added netlify/lib/seed.mjs compatibility module required by the in-app update validator.
+- In-app update publishing now accepts the repository's api.mjs + api-core.mjs structure and publishes a self-contained API runtime.
+- Runtime update assets use a dedicated Netlify Blobs store (gifted-brainz-runtime) so large update publishing does not contend with the core data store.
+- Netlify Blobs access now uses the platform-provided Functions context automatically rather than manually overriding site/token context.
+- Persistent-storage failures now preserve the underlying error message for diagnostics instead of replacing it with a generic message.
+- Core production storage still refuses per-instance/in-memory fallback.
+- Existing student/admin/CBT/1-v-1 functionality is preserved.
